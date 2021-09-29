@@ -54,6 +54,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
         children: [
           Container(
             height: double.infinity,
+            width: double.infinity,
             child: Image(
               image: AssetImage('assets/images/Illustration1.png'),
               fit: BoxFit.fill,
@@ -61,6 +62,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
           ),
           Container(
             height: double.infinity,
+            width: double.infinity,
             child: Image(
               image: AssetImage('assets/images/Illustration4.png'),
               fit: BoxFit.cover,
@@ -77,7 +79,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                   children: <Widget>[
                     Expanded(
                       child: Align(
-                        alignment: Alignment.centerRight,
+                        alignment: Alignment.center,
                         child: Hero(
                           tag: 'logo',
                           child: Icon(
@@ -89,8 +91,8 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                     ),
                     Expanded(
                       flex: 2,
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 15.0),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
                         child: AnimatedTextKit(
                           animatedTexts: [
                             TypewriterAnimatedText(
