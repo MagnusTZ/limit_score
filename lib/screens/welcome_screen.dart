@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:limit_score/components/rounded_button.dart';
@@ -55,29 +57,36 @@ class _WelcomeScreenState extends State<WelcomeScreen>
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Expanded(
-                  child: Hero(
-                    tag: 'logo',
-                    child: Icon(
-                      Icons.credit_score_outlined,
-                      size: 60.0,
+                  child: Align(
+                    alignment: Alignment.centerRight,
+                    child: Hero(
+                      tag: 'logo',
+                      child: Icon(
+                        Icons.credit_score_outlined,
+                        size: 60.0,
+                      ),
                     ),
                   ),
                 ),
                 Expanded(
-                  flex: 3,
-                  child: AnimatedTextKit(
-                    animatedTexts: [
-                      TypewriterAnimatedText(
-                        'Limit Score',
-                        textStyle: const TextStyle(
-                          fontSize: 45.0,
-                          fontWeight: FontWeight.w900,
+                  flex: 2,
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 15.0),
+                    child: AnimatedTextKit(
+                      animatedTexts: [
+                        TypewriterAnimatedText(
+                          'Limit Score',
+                          textStyle: const TextStyle(
+                            fontSize: 45.0,
+                            fontWeight: FontWeight.w900,
+                          ),
+                          speed: const Duration(milliseconds: 200),
                         ),
-                        speed: const Duration(milliseconds: 200),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ],
