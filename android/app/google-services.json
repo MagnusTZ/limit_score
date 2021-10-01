@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "851853747308",
-    "project_id": "limit-score",
-    "storage_bucket": "limit-score.appspot.com"
+    "project_number": "918411705029",
+    "project_id": "limit-score-bc504",
+    "storage_bucket": "limit-score-bc504.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:851853747308:android:520e5b42d62912ce972449",
+        "mobilesdk_app_id": "1:918411705029:android:9631000e7bbd072d50ceac",
         "android_client_info": {
           "package_name": "com.qoollabz.limit_score"
         }
       },
       "oauth_client": [
         {
-          "client_id": "851853747308-br58mjkfrli88083nb1sdnunk7vjmcnc.apps.googleusercontent.com",
+          "client_id": "918411705029-l5ka9kmraeuahqovjt8tdgihurulft8j.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA8aZmeU82sJD1yfkvgw4C-UZgSb9hWZRg"
+          "current_key": "AIzaSyDx0LldaOKcKOjeweR9lFUd4C2c79hf1b8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "851853747308-br58mjkfrli88083nb1sdnunk7vjmcnc.apps.googleusercontent.com",
+              "client_id": "918411705029-l5ka9kmraeuahqovjt8tdgihurulft8j.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

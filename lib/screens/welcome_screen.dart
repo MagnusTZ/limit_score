@@ -49,9 +49,21 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: animation.value,
+      backgroundColor: Colors.transparent,
       body: Stack(
         children: [
+          Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [
+                  Color(0xffAE41A5),
+                  Color(0xff31247E),
+                ],
+              ),
+            ),
+          ),
           Container(
             height: double.infinity,
             width: double.infinity,
@@ -60,14 +72,14 @@ class _WelcomeScreenState extends State<WelcomeScreen>
               fit: BoxFit.fill,
             ),
           ),
-          Container(
-            height: double.infinity,
-            width: double.infinity,
-            child: Image(
-              image: AssetImage('assets/images/Illustration4.png'),
-              fit: BoxFit.cover,
-            ),
-          ),
+          // Container(
+          //   height: double.infinity,
+          //   width: double.infinity,
+          //   child: Image(
+          //     image: AssetImage('assets/images/Illustration4.png'),
+          //     fit: BoxFit.cover,
+          //   ),
+          // ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 24.0),
             child: Column(
@@ -104,6 +116,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                               speed: const Duration(milliseconds: 200),
                             ),
                           ],
+                          totalRepeatCount: 1,
                         ),
                       ),
                     ),
