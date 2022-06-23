@@ -10,6 +10,8 @@ import 'home_screen.dart';
 class RegistrationScreen extends StatefulWidget {
   static const String id = 'registration_screen';
 
+  const RegistrationScreen({Key? key}) : super(key: key);
+
   @override
   _RegistrationScreenState createState() => _RegistrationScreenState();
 }
@@ -28,7 +30,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         inAsyncCall: showSpinner,
         child: Stack(
           children: [
-            Container(
+            const SizedBox(
               height: double.infinity,
               width: double.infinity,
               child: Image(
@@ -36,7 +38,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 fit: BoxFit.fill,
               ),
             ),
-            Container(
+            const SizedBox(
               height: double.infinity,
               width: double.infinity,
               child: Image(
@@ -45,25 +47,25 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.0),
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Hero(
-                    tag: 'logo',
-                    child: Icon(
-                      Icons.credit_score_outlined,
-                      size: 200.0,
-                      color: Colors.white70,
-                    ),
-                  ),
-                  SizedBox(
+                  // Hero(
+                  //   tag: 'logo',
+                  //   child: Icon(
+                  //     Icons.credit_score_outlined,
+                  //     size: 200.0,
+                  //     color: Colors.white70,
+                  //   ),
+                  // ),
+                  const SizedBox(
                     height: 48.0,
                   ),
                   Container(
                     decoration: BoxDecoration(
-                      color: Color(0x8c281B5A),
+                      color: const Color(0x8c281B5A),
                       borderRadius: BorderRadius.circular(30.0),
                     ),
                     child: Padding(
@@ -87,7 +89,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                               totalRepeatCount: 1,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 16.0,
                           ),
                           TextField(
@@ -99,7 +101,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                             decoration: kTextFieldDecoration.copyWith(
                                 hintText: 'Enter your email'),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 16.0,
                           ),
                           TextField(
@@ -109,14 +111,19 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                               password = value;
                             },
                             decoration: kTextFieldDecoration.copyWith(
-                                hintText: 'Enter your password'),
+                              hintText: 'Enter your password',
+                              prefixIcon: const Icon(
+                                Icons.password,
+                              ),
+                            ),
                           ),
                           // SizedBox(
                           //   height: 16.0,
                           // ),
                           RoundedButton(
                             title: 'Register',
-                            color: Colors.black,
+                            color: kButtonColor2,
+                            width: 136.0,
                             onPressed: () async {
                               setState(() {
                                 showSpinner = true;
@@ -130,7 +137,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                   showSpinner = false;
                                 });
                               } catch (e) {
-                                print(e);
+                                //print(e);
                               }
                             },
                           ),

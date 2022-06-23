@@ -7,15 +7,14 @@ import 'package:limit_score/screens/welcome_screen.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 void main() async {
-  // Ensure that Firebase is initialized
   WidgetsFlutterBinding.ensureInitialized();
-  // Initialize Firebase
   await Firebase.initializeApp();
-  //
-  runApp(LimitScore());
+  runApp(const LimitScore());
 }
 
 class LimitScore extends StatelessWidget {
+  const LimitScore({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,18 +24,18 @@ class LimitScore extends StatelessWidget {
         minWidth: 480,
         defaultScale: true,
         breakpoints: [
-          ResponsiveBreakpoint.resize(480, name: MOBILE),
-          ResponsiveBreakpoint.autoScale(800, name: TABLET),
-          ResponsiveBreakpoint.resize(1000, name: DESKTOP),
-          ResponsiveBreakpoint.autoScale(2460, name: '4K'),
+          const ResponsiveBreakpoint.resize(480, name: MOBILE),
+          const ResponsiveBreakpoint.autoScale(800, name: TABLET),
+          const ResponsiveBreakpoint.resize(1000, name: DESKTOP),
+          const ResponsiveBreakpoint.autoScale(2460, name: '4K'),
         ],
       ),
       initialRoute: WelcomeScreen.id,
       routes: {
-        WelcomeScreen.id: (context) => WelcomeScreen(),
-        LoginScreen.id: (context) => LoginScreen(),
-        RegistrationScreen.id: (context) => RegistrationScreen(),
-        HomeScreen.id: (context) => HomeScreen(),
+        WelcomeScreen.id: (context) => const WelcomeScreen(),
+        LoginScreen.id: (context) => const LoginScreen(),
+        RegistrationScreen.id: (context) => const RegistrationScreen(),
+        HomeScreen.id: (context) => const HomeScreen(),
       },
     );
   }

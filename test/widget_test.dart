@@ -12,7 +12,7 @@ import 'package:limit_score/main.dart';
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(LimitScore());
+    await tester.pumpWidget(const LimitScore());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

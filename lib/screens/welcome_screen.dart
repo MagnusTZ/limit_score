@@ -3,12 +3,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:limit_score/components/rounded_button.dart';
-import 'package:limit_score/screens/registration_screen.dart';
 
+import '../constants.dart';
 import 'login_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static String id = 'welcome_screen';
+
+  const WelcomeScreen({Key? key}) : super(key: key);
 
   @override
   _WelcomeScreenState createState() => _WelcomeScreenState();
@@ -49,98 +51,141 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
-          Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topRight,
-                end: Alignment.bottomLeft,
-                colors: [
-                  Color(0xffAE41A5),
-                  Color(0xff31247E),
-                ],
+          // Container(
+          //   decoration: BoxDecoration(
+          //     gradient: LinearGradient(
+          //       begin: Alignment.topRight,
+          //       end: Alignment.bottomLeft,
+          //       colors: [
+          //         Color(0xffAE41A5),
+          //         Color(0xff31247E),
+          //       ],
+          //     ),
+          //   ),
+          // ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              height: 265.0,
+              //width: double.infinity,
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(25.0),
+                  topRight: Radius.circular(25.0),
+                ),
+                color: Color(0xff1C162E),
               ),
             ),
           ),
-          Container(
-            height: double.infinity,
-            width: double.infinity,
+          const Align(
+            alignment: Alignment.center,
             child: Image(
-              image: AssetImage('assets/images/Illustration1.png'),
-              fit: BoxFit.fill,
+              image: AssetImage('assets/images/image2.png'),
+              fit: BoxFit.cover,
             ),
           ),
-          // Container(
-          //   height: double.infinity,
-          //   width: double.infinity,
-          //   child: Image(
-          //     image: AssetImage('assets/images/Illustration4.png'),
-          //     fit: BoxFit.cover,
-          //   ),
-          // ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Expanded(
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Hero(
-                          tag: 'logo',
-                          child: Icon(
-                            Icons.credit_score_outlined,
-                            size: 60.0,
-                          ),
-                        ),
-                      ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            //crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              const Padding(
+                padding: EdgeInsets.only(
+                  top: 50.0,
+                  right: 55.0,
+                  bottom: 15.0,
+                ),
+                child: Align(
+                  alignment: Alignment.topRight,
+                  child: Text(
+                    'Welcome to',
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.black,
                     ),
-                    Expanded(
-                      flex: 2,
-                      child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: AnimatedTextKit(
-                          animatedTexts: [
-                            TypewriterAnimatedText(
-                              'Limit Score',
-                              textStyle: const TextStyle(
-                                fontSize: 45.0,
-                                fontWeight: FontWeight.w900,
-                              ),
-                              speed: const Duration(milliseconds: 200),
+                  ),
+                ),
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  // Align(
+                  //   alignment: Alignment.center,
+                  //   child: Hero(
+                  //     tag: 'logo',
+                  //     child: Icon(
+                  //       Icons.credit_score_outlined,
+                  //       color: Color(0xff1AD5AD),
+                  //       size: 60.0,
+                  //     ),
+                  //   ),
+                  // ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 38.0),
+                    child: Align(
+                      alignment: Alignment.topRight,
+                      child: AnimatedTextKit(
+                        animatedTexts: [
+                          TypewriterAnimatedText(
+                            'Limit Score',
+                            textStyle: const TextStyle(
+                              fontSize: 33.0,
+                              fontWeight: FontWeight.w800,
+                              color: Color(0xff1AD5AD),
                             ),
-                          ],
-                          totalRepeatCount: 1,
-                        ),
+                            speed: const Duration(milliseconds: 200),
+                          ),
+                        ],
+                        totalRepeatCount: 1,
                       ),
                     ),
-                  ],
+                  ),
+                ],
+              ),
+              // const Expanded(
+              //   child: Image(
+              //     image: AssetImage('assets/images/image2.png'),
+              //     fit: BoxFit.fill,
+              //   ),
+              // ),
+              const SizedBox(
+                height: 48.0,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 16.0,
+                  right: 16.0,
+                  top: 550.0,
+                  bottom: 60.0,
                 ),
-                SizedBox(
-                  height: 48.0,
-                ),
-                RoundedButton(
-                  title: 'Log In',
-                  color: Colors.black,
+                child: RoundedButton(
+                  title: 'Get Started',
+                  color: kButtonColor1,
+                  width: 140.0,
                   onPressed: () {
                     Navigator.pushNamed(context, LoginScreen.id);
                   },
                 ),
-                RoundedButton(
-                  title: 'Register',
-                  color: Colors.black,
-                  onPressed: () {
-                    Navigator.pushNamed(context, RegistrationScreen.id);
-                  },
-                ),
-              ],
-            ),
+              ),
+              // Padding(
+              //   padding: const EdgeInsets.only(
+              //     left: 16.0,
+              //     right: 16.0,
+              //   ),
+              //   child: RoundedButton(
+              //     title: 'Register',
+              //     color: kButtonColor1,
+              //     width: 136.0,
+              //     onPressed: () {
+              //       Navigator.pushNamed(context, RegistrationScreen.id);
+              //     },
+              //   ),
+              // ),
+            ],
           ),
         ],
       ),
